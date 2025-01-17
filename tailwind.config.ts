@@ -15,9 +15,9 @@ export default {
         cwhite: "#EEEEEE"
       },
       fontFamily: {
-        code: ["code"],
-        oswald: ["oswald"],
-        martel: ["martel"]
+        code: ["code", 'sans-serif'],
+        oswald: ["oswald", 'sans-serif'],
+        martel: ["martel", 'sans-serif']
       }
     },
   },
