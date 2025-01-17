@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'code';
+  src: url('/fonts/code.ttf');
+}
+
+@font-face {
+  font-family: 'oswald';
+  src: url('/fonts/oswald.ttf');
+}
+
+@font-face {
+  font-family: 'martel';
+  src: url('/fonts/martel.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
