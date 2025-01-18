@@ -28,8 +28,8 @@ const FloatingCircle: FC<FloatingCircleProps> = ({ delay, size, position }) => (
     style={position}
     initial={{ y: 0 }}
     animate={{
-      y: [-40, 40],
-      x: [-20, 20],
+      y: [-20, 20],
+      x: [-10, 10],
     }}
     transition={{
       repeat: Infinity,
@@ -64,33 +64,33 @@ const EmailSection: FC = () => {
 
   const circles = [
     {
-      size: "w-64 h-64",
-      position: { top: "5%", left: "10%" },
+      size: "w-32 md:w-64 h-32 md:h-64",
+      position: { top: "5%", left: "5%" },
       delay: 0,
     },
     {
-      size: "w-96 h-96",
-      position: { top: "20%", right: "5%" },
+      size: "w-48 md:w-96 h-48 md:h-96",
+      position: { top: "15%", right: "2%" },
       delay: 0.5,
     },
     {
-      size: "w-72 h-72",
-      position: { bottom: "30%", left: "5%" },
+      size: "w-36 md:w-72 h-36 md:h-72",
+      position: { bottom: "35%", left: "2%" },
       delay: 1,
     },
     {
-      size: "w-80 h-80",
-      position: { bottom: "10%", right: "15%" },
+      size: "w-40 md:w-80 h-40 md:h-80",
+      position: { bottom: "10%", right: "8%" },
       delay: 1.5,
     },
     {
-      size: "w-48 h-48",
-      position: { top: "40%", left: "30%" },
+      size: "w-24 md:w-48 h-24 md:h-48",
+      position: { top: "45%", left: "20%" },
       delay: 2,
     },
     {
-      size: "w-56 h-56",
-      position: { bottom: "45%", right: "25%" },
+      size: "w-28 md:w-56 h-28 md:h-56",
+      position: { bottom: "40%", right: "20%" },
       delay: 2.5,
     },
   ];
@@ -204,7 +204,7 @@ const EmailSection: FC = () => {
                   href="#"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-4 text-cyellow hover:opacity-80 transition-opacity">
+                  className="flex items-center w-max space-x-4 text-cyellow hover:opacity-80 transition-opacity">
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     className="w-12 h-12 bg-cblack rounded-full flex items-center justify-center">
