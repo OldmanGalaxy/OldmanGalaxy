@@ -1,11 +1,7 @@
 import { NextResponse } from 'next/server';
 import { MongoClient, ServerApiVersion } from 'mongodb';
 
-if (!process.env.MONGODB_URI) {
-  throw new Error('Please add your Mongo URI to .env.local');
-}
-
-const uri = process.env.MONGODB_URI;
+const uri = "mongodb+srv://corexxx:corexxx123@wikauction.snddr.mongodb.net/?retryWrites=true&w=majority&appName=Wikauction";
 let client: MongoClient | null = null;
 
 async function getMongoClient() {

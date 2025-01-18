@@ -157,7 +157,7 @@ const EmailSection: FC = () => {
         />
       ))}
 
-<div className="relative z-10 w-full min-h-screen flex flex-col md:flex-row p-4 md:p-8">
+      <div className="relative z-10 w-full min-h-screen flex flex-col md:flex-row p-4 md:p-8">
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -278,7 +278,9 @@ const EmailSection: FC = () => {
                         type={field === "email" ? "email" : "text"}
                         name={field === "email" ? "email" : "from_name"}
                         value={
-                          field === "email" ? formData.email : formData.from_name
+                          field === "email"
+                            ? formData.email
+                            : formData.from_name
                         }
                         onChange={(e) =>
                           setFormData({
