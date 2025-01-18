@@ -138,7 +138,7 @@ const Projects = () => {
       description:
         "Secured 2nd place in Web Wonders competition by Nexus. Website made to spread awareness of forestry and wildlife.",
       image: "/images/forestfocus.png",
-      videoLink: "#",
+      videoLink: "https://drive.google.com/file/d/14W0e3BYwJ_z6GF_HAsOWW7o9M6YaxApX/view?usp=drive_link",
       imagePosition: "left" as "left",
     },
     {
@@ -147,16 +147,16 @@ const Projects = () => {
       description:
         "Revamped website for a local startup. Much better UI/UX. Smoother animations and better design.",
       image: "/images/zerocow.png",
-      deployLink: "#",
+      deployLink: "https://zerocowfactory.netlify.app/",
       imagePosition: "right" as "right",
     },
     {
-      title: "Wiki War$",
+      title: "Wiki War$ (WIP)",
       technologies: "NextJS, Typescript, Firebase, Motion",
       description:
         "Online game involving strategy and general knowledge. Realtime bidding of Wikipedia pages, user with most views wins.",
       image: "/images/wikiwars.png",
-      deployLink: "#",
+      deployLink: "/",
       imagePosition: "left" as "left",
     },
     {
@@ -165,7 +165,7 @@ const Projects = () => {
       description:
         "My resume in the form of a website. Cool animations and design.",
       image: "/images/portfolio.png",
-      deployLink: "#",
+      deployLink: "/",
       imagePosition: "right" as "right",
     },
   ];
