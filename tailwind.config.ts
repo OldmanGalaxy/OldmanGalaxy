@@ -9,8 +9,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        cblack: "#222831",
-        cgray: "#393E46",
+        cblack: "#0a0f1c",
+        cgray: "#222831",
         cyellow: "#FFD369",
         cwhite: "#EEEEEE"
       },

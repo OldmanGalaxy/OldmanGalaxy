@@ -3,18 +3,18 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'code';
-  src: url('/fonts/code.ttf');
+  font-family: "code";
+  src: url("/fonts/code.ttf");
 }
 
 @font-face {
-  font-family: 'oswald';
-  src: url('/fonts/oswald.ttf');
+  font-family: "oswald";
+  src: url("/fonts/oswald.ttf");
 }
 
 @font-face {
-  font-family: 'martel';
-  src: url('/fonts/martel.ttf');
+  font-family: "martel";
+  src: url("/fonts/martel.ttf");
 }
 
 * {
@@ -27,5 +27,5 @@
 
 body {
   overflow-x: hidden;
-  background-color: #393E46;
+  background-color: #393e46;
 }

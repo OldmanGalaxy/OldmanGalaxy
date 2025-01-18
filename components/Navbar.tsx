@@ -1,58 +1,93 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+'use client';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
-const Navbar = () => {
+export default function Navbar() {
+  const container = {
+    hidden: { opacity: 0, y: -20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 30,
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: -20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 30,
+      },
+    },
+  };
+
   return (
-    <nav className="bg-cblack h-16">
+    <motion.nav
+      initial="hidden"
+      animate="show"
+      variants={container}
+      className="bg-cgray h-24">
       <div className="container mx-auto h-full px-6">
         <div className="hidden md:flex items-center justify-between h-full">
-          <Link href="/">
-            <Image
-              src="/images/signature.png"
-              alt="Signature"
-              width={40}
-              height={40}
-              className="cursor-pointer"
-            />
-          </Link>
-          
-          <div className="flex items-center space-x-8 text-cyellow font-oswald uppercase text-lg">
-            <Link 
-              href="/about"
-              className="hover:text-cwhite duration-500"
-            >
-              About Me
+          <motion.div variants={item}>
+            <Link href="/">
+              <Image
+                src="/images/signature.png"
+                alt="Signature"
+                width={48}
+                height={48}
+                className="cursor-pointer"
+              />
             </Link>
-            <Link 
-              href="/projects"
-              className="hover:text-cwhite duration-500"
-            >
-              Projects
-            </Link>
-            <Link 
-              href="/"
-              className="hover:text-cwhite duration-500"
-            >
-              Home
-            </Link>
-          </div>
+          </motion.div>
+
+          <motion.div
+            className="flex items-center space-x-12 text-cyellow font-oswald uppercase text-xl"
+            variants={container}>
+            <motion.div variants={item}>
+              <Link href="/about" className="hover:text-cwhite duration-500">
+                About Me
+              </Link>
+            </motion.div>
+            <motion.div variants={item}>
+              <Link href="/projects" className="hover:text-cwhite duration-500">
+                Projects
+              </Link>
+            </motion.div>
+            <motion.div variants={item}>
+              <Link href="/" className="hover:text-cwhite duration-500">
+                Home
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
 
-        <div className="md:hidden flex justify-center items-center h-full">
+        <motion.div
+          variants={item}
+          className="md:hidden flex justify-center items-center h-full">
           <Link href="/">
             <Image
               src="/images/signature.png"
               alt="Signature"
-              width={40}
-              height={40}
+              width={48}
+              height={48}
               className="cursor-pointer"
             />
           </Link>
-        </div>
+        </motion.div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
-
-export default Navbar;
