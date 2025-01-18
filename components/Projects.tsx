@@ -67,6 +67,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {deployLink && (
           <motion.a
             href={deployLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-cyellow hover:text-cwhite text-sm"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}>
@@ -76,6 +78,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {videoLink && (
           <motion.a
             href={videoLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-cyellow hover:text-cwhite text-sm"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}>
@@ -131,6 +135,7 @@ const Projects = () => {
     }, 1500);
     return () => clearTimeout(timer);
   }, []);
+  
   const projects = [
     {
       title: "Forest Focus",
@@ -138,7 +143,7 @@ const Projects = () => {
       description:
         "Secured 2nd place in Web Wonders competition by Nexus. Website made to spread awareness of forestry and wildlife.",
       image: "/images/forestfocus.png",
-      videoLink: "https://drive.google.com/file/d/14W0e3BYwJ_z6GF_HAsOWW7o9M6YaxApX/view?usp=drive_link",
+      videoLink: "https://drive.google.com/file/d/14W0e3BYwJ_z6GF_HAsOWW7o9M6YaxApX/preview",
       imagePosition: "left" as "left",
     },
     {
@@ -147,7 +152,7 @@ const Projects = () => {
       description:
         "Revamped website for a local startup. Much better UI/UX. Smoother animations and better design.",
       image: "/images/zerocow.png",
-      deployLink: "https://zerocowfactory.netlify.app/",
+      deployLink: "https://zerocowfactory.netlify.app",
       imagePosition: "right" as "right",
     },
     {

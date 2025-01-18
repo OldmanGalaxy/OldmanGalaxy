@@ -5,34 +5,53 @@ import { motion } from "framer-motion";
 const Cursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    document.body.style.cursor = "none";
-
-    const mouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const isClickable = target.closest(
-        'a, button, [role="button"], input, select, textarea'
-      );
-      setIsHovering(!!isClickable);
-    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
 
-    window.addEventListener("mousemove", mouseMove);
-    window.addEventListener("mouseover", handleMouseOver);
+    if (!isMobile) {
+      document.body.style.cursor = "none";
+
+      const mouseMove = (e: MouseEvent) => {
+        setMousePosition({
+          x: e.clientX,
+          y: e.clientY,
+        });
+      };
+
+      const handleMouseOver = (e: MouseEvent) => {
+        const target = e.target as HTMLElement;
+        const isClickable = target.closest(
+          'a, button, [role="button"], input, select, textarea'
+        );
+        setIsHovering(!!isClickable);
+      };
+
+      window.addEventListener("mousemove", mouseMove);
+      window.addEventListener("mouseover", handleMouseOver);
+
+      return () => {
+        document.body.style.cursor = "auto";
+        window.removeEventListener("mousemove", mouseMove);
+        window.removeEventListener("mouseover", handleMouseOver);
+        window.removeEventListener("resize", checkMobile);
+      };
+    }
 
     return () => {
-      document.body.style.cursor = "auto";
-      window.removeEventListener("mousemove", mouseMove);
-      window.removeEventListener("mouseover", handleMouseOver);
+      window.removeEventListener("resize", checkMobile);
     };
-  }, []);
+  }, [isMobile]);
+
+  if (isMobile) {
+    return null;
+  }
 
   const cursorVariants = {
     default: {
