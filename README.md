@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Purv Kabaria</h1>
-<h3 align="center">A passionate full stack developer and AI enthusiast.</h3>
+<h3 align="center">A passionate full stack developer and Python Programmer.</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=oldmangalaxy&label=Profile%20views&color=00eeff&style=flat-square" alt="oldmangalaxy" /> </p>
 
