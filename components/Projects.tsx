@@ -170,9 +170,8 @@ const Projects = () => {
     },
   ];
 
-
   return (
-    <div className="min-h-screen bg-cblack p-8 relative">
+    <div id="projects" className="min-h-screen bg-cblack p-8 relative">
       <motion.div
         className="max-w-6xl mx-auto relative z-10"
         initial={{ opacity: 0 }}

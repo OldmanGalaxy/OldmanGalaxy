@@ -1,10 +1,16 @@
 "use client";
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Navbar() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const container = {
     hidden: { opacity: 0, y: -20 },
     show: {
@@ -42,7 +48,7 @@ export default function Navbar() {
       <div className="container mx-auto h-full px-6">
         <div className="hidden md:flex items-center justify-between h-full">
           <motion.div variants={item}>
-            <Link href="/">
+            <button onClick={() => scrollToSection("hero")}>
               <Image
                 src="/images/signature.png"
                 alt="Signature"
@@ -50,26 +56,32 @@ export default function Navbar() {
                 height={48}
                 className="cursor-pointer"
               />
-            </Link>
+            </button>
           </motion.div>
 
           <motion.div
             className="flex items-center space-x-12 text-cyellow font-oswald uppercase text-xl"
             variants={container}>
             <motion.div variants={item}>
-              <Link href="/about" className="hover:text-cwhite duration-500">
-                About Me
-              </Link>
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="hover:text-cwhite duration-500">
+                Contact Me
+              </button>
             </motion.div>
             <motion.div variants={item}>
-              <Link href="/projects" className="hover:text-cwhite duration-500">
+              <button
+                onClick={() => scrollToSection("projects")}
+                className="hover:text-cwhite duration-500">
                 Projects
-              </Link>
+              </button>
             </motion.div>
             <motion.div variants={item}>
-              <Link href="/" className="hover:text-cwhite duration-500">
+              <button
+                onClick={() => scrollToSection("hero")}
+                className="hover:text-cwhite duration-500">
                 Home
-              </Link>
+              </button>
             </motion.div>
           </motion.div>
         </div>
@@ -77,7 +89,7 @@ export default function Navbar() {
         <motion.div
           variants={item}
           className="md:hidden flex justify-center items-center h-full">
-          <Link href="/">
+          <button onClick={() => scrollToSection("hero")}>
             <Image
               src="/images/signature.png"
               alt="Signature"
@@ -85,7 +97,7 @@ export default function Navbar() {
               height={48}
               className="cursor-pointer"
             />
-          </Link>
+          </button>
         </motion.div>
       </div>
     </motion.nav>

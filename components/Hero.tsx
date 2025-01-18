@@ -93,7 +93,9 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative h-[calc(100vh-96px)] bg-[#0a0f1c] overflow-hidden">
+    <div
+      id="hero"
+      className="relative h-[calc(100vh-96px)] bg-[#0a0f1c] overflow-hidden">
       <motion.div
         variants={container}
         initial="hidden"
