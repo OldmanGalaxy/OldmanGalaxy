@@ -1,15 +1,21 @@
-'use client';
+"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const AnimatedCircle = ({ className, delay }: { className: string; delay: number }) => {
+const AnimatedCircle = ({
+  className,
+  delay,
+}: {
+  className: string;
+  delay: number;
+}) => {
   return (
     <motion.div
       className={`bg-yellow-400 rounded-full ${className}`}
       initial={{ scale: 0, opacity: 0 }}
-      animate={{ 
-        scale: 1, 
+      animate={{
+        scale: 1,
         opacity: 1,
         y: [0, 15, -15, 0],
         x: [0, -15, 15, 0],
@@ -36,7 +42,7 @@ const AnimatedCircle = ({ className, delay }: { className: string; delay: number
           duration: 8,
           ease: "linear",
           delay: delay,
-        }
+        },
       }}
     />
   );
