@@ -95,6 +95,24 @@ const EmailSection: FC = () => {
     },
   ];
 
+  const socialLinks = [
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/purv-kabaria-38b377201/",
+      icon: Linkedin,
+    },
+    {
+      name: "Resume",
+      href: "https://drive.google.com/file/d/1zAwc8G9sbznEumsBaLdsL0qhBfpGZIVg/view?usp=drive_link",
+      icon: FileText,
+    },
+    {
+      name: "Github",
+      href: "https://github.com/OldmanGalaxy",
+      icon: Github,
+    },
+  ];
+
   const showNotification = (type: NotificationType, message: string) => {
     setNotification({ type, message });
     setTimeout(() => {
@@ -194,34 +212,26 @@ const EmailSection: FC = () => {
           </div>
 
           <div className="flex flex-col space-y-6">
-            {["LinkedIn", "Resume", "Github"].map((item, index) => (
+            {socialLinks.map((item, index) => (
               <motion.div
-                key={item}
+                key={item.name}
                 initial={{ x: -50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1 + index * 0.2 }}>
                 <Link
-                  href="#"
+                  href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center w-max space-x-4 text-cyellow hover:opacity-80 transition-opacity">
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     className="w-12 h-12 bg-cblack rounded-full flex items-center justify-center">
-                    {item === "LinkedIn" && (
-                      <Linkedin size={32} className="text-cyellow" />
-                    )}
-                    {item === "Resume" && (
-                      <FileText size={32} className="text-cyellow" />
-                    )}
-                    {item === "Github" && (
-                      <Github size={32} className="text-cyellow" />
-                    )}
+                    <item.icon size={32} className="text-cyellow" />
                   </motion.div>
                   <motion.span
                     whileHover={{ x: 5 }}
                     className="text-2xl font-oswald">
-                    {item}
+                    {item.name}
                   </motion.span>
                 </Link>
               </motion.div>
