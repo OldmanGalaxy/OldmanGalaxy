@@ -4,9 +4,9 @@ import Image from 'next/image';
 
 const Navbar = () => {
   return (
-    <nav className="bg-cblack py-6 px-6">
-      <div className="container mx-auto">
-        <div className="hidden md:flex items-center justify-between">
+    <nav className="bg-cblack h-16">
+      <div className="container mx-auto h-full px-6">
+        <div className="hidden md:flex items-center justify-between h-full">
           <Link href="/">
             <Image
               src="/images/signature.png"
@@ -39,7 +39,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="md:hidden flex justify-center">
+        <div className="md:hidden flex justify-center items-center h-full">
           <Link href="/">
             <Image
               src="/images/signature.png"
