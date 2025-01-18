@@ -1,14 +1,18 @@
+import React from "react";
 import Marquee from "react-fast-marquee";
 
-export default function MarqueeSection() {
+interface MarqueeSectionProps {
+  text: string;
+  className?: string;
+}
+
+export default function MarqueeSection({
+  text ,
+  className = "py-8 h-max font-code font-bold text-3xl text-cyellow bg-cgray",
+}: MarqueeSectionProps) {
   return (
-    <>
-      <div className="marquee-container py-8 h-max font-code font-bold text-3xl text-cyellow bg-cgray">
-        <Marquee>
-          Software Developer - Web Developer - UI/UX Designer - Competitive
-          Programmer &nbsp;{" "}
-        </Marquee>
-      </div>
-    </>
+    <div className={`marquee-container ${className}`}>
+      <Marquee>{text} &nbsp;</Marquee>
+    </div>
   );
 }

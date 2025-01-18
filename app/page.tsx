@@ -10,8 +10,9 @@ export default function Home() {
       <Cursor />
       <Navbar />
       <Hero />
-      <MarqueeSection />
+      <MarqueeSection text="Software Developer - Web Developer - Competitive Programmer - UI/UX Designer" />
       <Projects />
+      <MarqueeSection text="Send Me An Email! Send Me An Email! Send Me An Email! Send Me An Email! Send Me An Email!" />
     </>
   );
 }
