@@ -103,7 +103,7 @@ const EmailSection: FC = () => {
     },
     {
       name: "Resume",
-      href: "https://drive.google.com/file/d/1zAwc8G9sbznEumsBaLdsL0qhBfpGZIVg/view?usp=drive_link",
+      href: "https://drive.google.com/file/d/1zAwc8G9sbznEumsBaLdsL0qhBfpGZIVg/view?usp=sharing",
       icon: FileText,
     },
     {
